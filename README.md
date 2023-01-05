@@ -1,4 +1,6 @@
-# fresh project
+# base-fresh
+
+Basic template to create web pages with FRESH
 
 ### Usage
 
