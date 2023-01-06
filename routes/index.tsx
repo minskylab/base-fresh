@@ -27,11 +27,11 @@ export default function Home({ data }: PageProps) {
   const users: Users[] = data?.users?.data;
 
   return (
-    <>
-      <Head>
-        <title>Fresh Base</title>
-      </Head>
-      <div class="h-screen grid place-items-center">
+    <html>
+      <div class="h-screen grid place-items-center dark:bg-black dark:text-white">
+        <Head>
+          <title>Fresh Base</title>
+        </Head>
         <div class="p-4 w-96">
           <div class="flex justify-between items-center">
             <p class="my-6 text-4xl font-bold">Hello MINSKY!</p>
@@ -44,6 +44,6 @@ export default function Home({ data }: PageProps) {
           </ul>
         </div>
       </div>
-    </>
+    </html>
   );
 }

@@ -3,18 +3,19 @@ import IconSun from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/sun.tsx";
 import { useState } from "preact/hooks";
 
 export default function DarkModeButton() {
-  const [theme, setTheme] = useState("light");
+  const [isDark, setIsDark] = useState(false);
+
+  const handleDarkMode = () => {
+    document.documentElement.classList.toggle("dark");
+    setIsDark(!isDark);
+  };
 
   return (
     <button
-      class="px-3 py-2 shadow-lg bg-white rounded hover:bg-gray-50 focus:outline-none"
-      onClick={() => (theme === "light" ? setTheme("dark") : setTheme("light"))}
+      class="p-2 shadow-lg bg-white dark:bg-indigo-500 rounded hover:bg-indigo-200 dark:hover:bg-indigo-600 focus:outline-none"
+      onClick={handleDarkMode}
     >
-      {theme === "light" ? (
-        <IconSun class="w-5 h-5" />
-      ) : (
-        <IconMoon class="w-5 h-5" />
-      )}
+      {isDark ? <IconMoon class="w-5 h-5" /> : <IconSun class="w-5 h-5" />}
     </button>
   );
 }
